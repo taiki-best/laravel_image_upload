@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\CkeditorController;
+
+Route::get('ckeditor', [CkeditorController::class, 'index']);
+Route::post('ckeditor/upload', [CkeditorController::class, 'upload'])->name('ckeditor.upload');
